@@ -2,6 +2,8 @@ import CalendarHeader from './CalendarHeader';
 import CalendarBody from './CalenarBody';
 import CalendarWeekDaysRow from './CalendarWeekDaysRow';
 
+import PropTypes from 'prop-types'
+
 import { getCalendarData } from '../utils/dateTransform';
 
 const Calendar = ({date}) => {
@@ -26,6 +28,10 @@ const Calendar = ({date}) => {
         </table>
       </div>
   )
+}
+
+Calendar.propTypes = {
+  date: PropTypes.instanceOf(Date)
 }
 
 export default Calendar;

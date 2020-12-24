@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {weeks, months} from '../utils/dictonary';
 
 const CalendarHeader = ({data}) => {
@@ -18,6 +19,19 @@ const CalendarHeader = ({data}) => {
       </div>
     </>
   )
+};
+
+CalendarHeader.propTypes = {
+  data: PropTypes.shape({
+    year: PropTypes.number,
+    month: PropTypes.number,
+    day: PropTypes.number,
+    calendar: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.shape({
+      day: PropTypes.number,
+      isCurrectDay: PropTypes.bool,
+      isCurrectMonth: PropTypes.bool
+    })))
+  })
 };
 
 export default CalendarHeader;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import CalendarDaysRows from './CalendarDaysRows';
 
 const CalendarBody = ({calendar}) => {
@@ -11,8 +12,15 @@ const CalendarBody = ({calendar}) => {
       ))
     }
     </tbody>
-    
   )
+};
+
+CalendarBody.propTypes = {
+  calendar: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.shape({
+    day: PropTypes.number,
+    isCurrectDay: PropTypes.bool,
+    isCurrectMonth: PropTypes.bool
+  })))
 };
 
 export default CalendarBody;
